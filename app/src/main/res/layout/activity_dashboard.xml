@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.hipla.smartoffice_new.activity.DashboardActivity" />
+
+    </data>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false"
+        tools:openDrawer="end">
+
+        <LinearLayout
+            android:id="@+id/llmain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/m45"
+                android:background="@color/colorPrimaryDark">
+
+                <ImageView
+                    android:id="@+id/ivback"
+                    android:layout_width="@dimen/_36sdp"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_action_back"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/ivappicon"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/ivback"
+                    android:padding="@dimen/m5"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/toolbar_logo" />
+
+                <ImageView
+                    android:id="@+id/ivnavigation"
+                    android:layout_width="@dimen/_36sdp"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:onClick="@{()-> activity.openDrawerOnClick()}"
+                    android:src="@drawable/ic_action_navigation_menu" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/llmylaout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <android.support.v4.app.FragmentTabHost
+                    android:id="@+id/tabhost"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:id="@android:id/tabcontent"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="0" />
+
+                        <FrameLayout
+                            android:id="@+id/realtabcontent"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/line"
+                            android:layout_alignParentTop="true" />
+
+                        <View
+                            android:id="@+id/line"
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_above="@+id/footer"
+                            android:background="@color/line_gray" />
+
+                        <LinearLayout
+                            android:id="@+id/footer"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_45sdp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/colorPrimary"
+                            android:orientation="horizontal"
+                            android:scrollbars="none">
+
+
+                            <!--<TabWidget
+                                android:id="@android:id/tabs"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimary"
+                                android:divider="@android:color/darker_gray"
+                                android:gravity="top|center_horizontal" />-->
+
+                            <RelativeLayout
+                                android:id="@+id/tab_home"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:onClick="@{()->activity.goToHome()}">
+
+                                <ImageView
+                                    android:id="@+id/iv_home"
+                                    android:layout_width="@dimen/m20"
+                                    android:layout_height="@dimen/m20"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="@dimen/m7"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/tab_home" />
+
+                                <TextView
+                                    android:id="@+id/tv_tab1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/iv_home"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="@dimen/m3"
+                                    android:text="@string/home"
+                                    android:textColor="@color/text_white"
+                                    android:textSize="@dimen/text_very_small" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/tab_meeting"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:onClick="@{ ()-> activity.manageMeeting()}">
+
+                                <ImageView
+                                    android:id="@+id/iv_meeting"
+                                    android:layout_width="@dimen/m15"
+                                    android:layout_height="@dimen/m20"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="@dimen/m7"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/tab_meeting" />
+
+                                <TextView
+                                    android:id="@+id/tv_tab2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/iv_meeting"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="@dimen/m3"
+                                    android:gravity="center"
+                                    android:text="@string/manage_meeting_tab"
+                                    android:textColor="@color/text_white"
+                                    android:textSize="@dimen/_5ssp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/tab_add_meetings"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:onClick="@{()-> activity.scheduleMeeting()}">
+
+                                <ImageView
+                                    android:id="@+id/ivAddMeeting"
+                                    android:layout_width="@dimen/m25"
+                                    android:layout_height="@dimen/m20"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="@dimen/m7"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/tab_add_meeting" />
+
+                                <TextView
+                                    android:id="@+id/tv_tab3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/ivAddMeeting"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="@dimen/m3"
+                                    android:gravity="center"
+                                    android:text="@string/add_meeting"
+                                    android:textColor="@color/text_white"
+                                    android:textSize="@dimen/_6ssp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/tab_notification"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:onClick="@{()-> activity.setNotification()}">
+
+                                <ImageView
+                                    android:id="@+id/iv_notification"
+                                    android:layout_width="@dimen/m20"
+                                    android:layout_height="@dimen/m22"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="@dimen/m7"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/tab_notification" />
+
+                                <TextView
+                                    android:id="@+id/tv_tab4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/iv_notification"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="@dimen/m3"
+                                    android:text="@string/notification"
+                                    android:textColor="@color/text_white"
+                                    android:textSize="@dimen/text_very_small" />
+
+                                <View
+                                    android:id="@+id/view_notification"
+                                    android:layout_width="@dimen/m10"
+                                    android:layout_height="@dimen/m10"
+                                    android:layout_marginLeft="@dimen/m40"
+                                    android:layout_marginTop="@dimen/m10"
+                                    android:background="@drawable/circle_red"
+                                    android:visibility="gone" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/tab_more"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:onClick="@{()-> activity.openDrawerOnClick()}">
+
+                                <ImageView
+                                    android:id="@+id/iv_more"
+                                    android:layout_width="@dimen/m25"
+                                    android:layout_height="@dimen/m20"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="@dimen/m10"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/tab_more" />
+
+                                <TextView
+                                    android:id="@+id/tv_tab5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/iv_more"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="@dimen/m3"
+                                    android:text="@string/more"
+                                    android:textColor="@color/text_white"
+                                    android:textSize="@dimen/text_very_small" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/ivScheduleSettings"
+                            android:layout_width="@dimen/m85"
+                            android:layout_height="@dimen/m85"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center|bottom"
+                            android:layout_marginBottom="@dimen/m7"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/schedule_meetings_tab"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+
+                </android.support.v4.app.FragmentTabHost>
+            </LinearLayout>
+        </LinearLayout>
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="@dimen/_230sdp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@drawable/bg_drawer">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/m25"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/m15"
+                        android:onClick="@{ ()-> activity.goToHome()}"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="@dimen/m20"
+                            android:layout_height="@dimen/m20"
+                            android:layout_centerInParent="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_homemenu" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/m7"
+                            android:layout_weight="4"
+                            android:fontFamily="serif"
+                            android:text="@string/home"
+                            android:textColor="@color/text_white"
+                            android:textSize="@dimen/text_medium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_manage_meetinhg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/m15"
+                        android:onClick="@{ ()-> activity.manageMeeting()}"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="@dimen/m20"
+                            android:layout_height="@dimen/m20"
+                            android:layout_centerInParent="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_managemenu" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/m7"
+                            android:layout_weight="4"
+                            android:fontFamily="serif"
+                            android:text="@string/manage_meeting"
+                            android:textColor="@color/text_white"
+                            android:textSize="@dimen/text_medium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_notification"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/m15"
+                        android:onClick="@{()-> activity.setNotification()}"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="@dimen/m20"
+                            android:layout_height="@dimen/m20"
+                            android:layout_centerInParent="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_notificationmenu" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/m7"
+                            android:layout_weight="4"
+                            android:fontFamily="serif"
+                            android:text="@string/notification"
+                            android:textColor="@color/text_white"
+                            android:textSize="@dimen/text_medium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/m15"
+                        android:onClick="@{ ()-> activity.indboxMessages()}"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="@dimen/m20"
+                            android:layout_height="@dimen/m20"
+                            android:layout_centerInParent="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_messagesmenu" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/m7"
+                            android:layout_weight="4"
+                            android:fontFamily="serif"
+                            android:text="@string/message_small"
+                            android:textColor="@color/text_white"
+                            android:textSize="@dimen/text_medium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_control_panel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/m15"
+                        android:onClick="@{()-> activity.setControlPanel()}"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="@dimen/m20"
+                            android:layout_height="@dimen/m20"
+                            android:layout_centerInParent="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_controlmenu" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/m7"
+                            android:layout_weight="4"
+                            android:fontFamily="serif"
+                            android:text="@string/control_panel"
+                            android:textColor="@color/text_white"
+                            android:textSize="@dimen/text_medium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_hot_desking"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/m15"
+                        android:onClick="@{()-> activity.setHotDesking()}"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="@dimen/m20"
+                            android:layout_height="@dimen/m20"
+                            android:layout_centerInParent="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_hot_desking" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/m7"
+                            android:layout_weight="4"
+                            android:fontFamily="serif"
+                            android:text="@string/hot_desking"
+                            android:textColor="@color/text_white"
+                            android:textSize="@dimen/text_medium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_profile_management"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/m15"
+                        android:onClick="@{ ()-> activity.profileManagement()}"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="@dimen/m20"
+                            android:layout_height="@dimen/m20"
+                            android:layout_centerInParent="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_profilemenu" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/m7"
+                            android:layout_weight="4"
+                            android:fontFamily="serif"
+                            android:text="@string/profile_management"
+                            android:textColor="@color/text_white"
+                            android:textSize="@dimen/text_medium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_set_avaibility"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/m15"
+                        android:onClick="@{ ()-> activity.setAvaibility()}"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="@dimen/m20"
+                            android:layout_height="@dimen/m20"
+                            android:layout_centerInParent="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_availablitymenu" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/m7"
+                            android:layout_weight="4"
+                            android:fontFamily="serif"
+                            android:text="@string/set_avability"
+                            android:textColor="@color/text_white"
+                            android:textSize="@dimen/text_medium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_about_us"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/m15"
+                        android:onClick="@{()-> activity.aboutUs()}"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="@dimen/m20"
+                            android:layout_height="@dimen/m20"
+                            android:layout_centerInParent="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_aboutusmenu" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/m7"
+                            android:layout_weight="4"
+                            android:fontFamily="serif"
+                            android:text="@string/about_us"
+                            android:textColor="@color/text_white"
+                            android:textSize="@dimen/text_medium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_logout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/m15"
+                        android:onClick="@{  ()-> activity.logout()}"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="@dimen/m20"
+                            android:layout_height="@dimen/m20"
+                            android:layout_centerInParent="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_signoutmenu" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/m7"
+                            android:layout_weight="4"
+                            android:fontFamily="serif"
+                            android:text="@string/logout"
+                            android:textColor="@color/text_white"
+                            android:textSize="@dimen/text_medium" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+        </android.support.design.widget.NavigationView>
+
+    </android.support.v4.widget.DrawerLayout>
+
+</layout>

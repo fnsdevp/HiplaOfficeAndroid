@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.hipla.smartoffice_new.fragment.EditProfileFragment" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg_management"
+        tools:context="com.hipla.smartoffice_new.fragment.EditProfileFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/m20"
+            android:paddingRight="@dimen/m20"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/m60">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/m20">
+
+                    <ImageView
+                        android:id="@+id/iv_profile_pic"
+                        android:layout_width="@dimen/_105sdp"
+                        android:layout_height="@dimen/_105sdp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_profile"
+                        android:scaleType="fitXY"/>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ic_profile_ring">
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/m20"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_user_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:text="@string/user_format"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:textColor="@color/text_white"
+                        android:textSize="@dimen/text_medium" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginTop="@dimen/m5"
+                        android:background="@color/line_gray" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/m20"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_first_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:text="@string/first_name_format"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:textColor="@color/text_white"
+                        android:textSize="@dimen/text_medium" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginTop="@dimen/m5"
+                        android:background="@color/line_gray" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/m20"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_last_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:text="@string/last_name_format"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:textColor="@color/text_white"
+                        android:textSize="@dimen/text_medium" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginTop="@dimen/m5"
+                        android:background="@color/line_gray" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/m20"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_designation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:text="@string/designation_format"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:textColor="@color/text_white"
+                        android:textSize="@dimen/text_medium" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginTop="@dimen/m5"
+                        android:background="@color/line_gray" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/m20"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_department"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:text="@string/department_format"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:textColor="@color/text_white"
+                        android:textSize="@dimen/text_medium" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginTop="@dimen/m5"
+                        android:background="@color/line_gray" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/m20"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:text="@string/email_format"
+                        android:textColor="@color/text_white"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:textSize="@dimen/text_medium" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginTop="@dimen/m5"
+                        android:background="@color/line_gray" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/m20"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:text="@string/phone_format"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:textColor="@color/text_white"
+                        android:textSize="@dimen/text_medium" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginTop="@dimen/m5"
+                        android:background="@color/line_gray" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_change_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/m20"
+                    android:text="@string/change_password"
+                    android:fontFamily="serif"
+                    android:textColor="@color/text_blue"
+                    android:textSize="@dimen/text_extra_larg" />
+
+                <TextView
+                    android:id="@+id/tv_update_device"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/m5"
+                    android:text="@string/update_device_information"
+                    android:textColor="@color/text_blue"
+                    android:fontFamily="serif"
+                    android:textSize="@dimen/text_extra_larg" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/m15">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/distance_notification"
+                        android:textColor="@color/text_white"
+                        android:textSize="@dimen/text_larg"
+                        android:fontFamily="serif"/>
+
+                    <Switch
+                        android:id="@+id/toggle_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/m10" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/m10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_white"
+                        android:textSize="@dimen/text_larg"
+                        android:fontFamily="serif"
+                        android:text="@string/select_time_slot"
+                        android:layout_marginRight="@dimen/m10"/>
+
+                    <RadioGroup
+                        android:id="@+id/btn_grp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center_vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_time_slot_half_hours"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="30 mins"
+                            android:textColor="@color/text_white"
+                            android:buttonTint="@color/text_white"
+                            android:textSize="@dimen/text_larg"
+                            android:fontFamily="serif"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_time_slot_one_hours"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="60 mins"
+                            android:buttonTint="@color/text_white"
+                            android:textColor="@color/text_white"
+                            android:textSize="@dimen/text_larg"
+                            android:fontFamily="serif"/>
+                    </RadioGroup>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

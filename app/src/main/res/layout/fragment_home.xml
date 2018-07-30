@@ -1,0 +1,322 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.hipla.smartoffice_new.fragment.HomeFragment" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_home"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_background"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/m15"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/flSchedulemeeting"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/m7"
+                        android:layout_weight="1"
+                        android:background="@drawable/block_bg"
+                        android:onClick="@{()-> fragment.scheduleMeeting()}">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/m70"
+                                android:layout_height="@dimen/m65"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="@dimen/m10"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/schedule_meeting" />
+
+                            <TextView
+                                android:id="@+id/tvschedule"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:fontFamily="serif"
+                                android:gravity="center"
+                                android:text="@string/schedule_your_meeting"
+                                android:textColor="@color/text_white"
+                                android:textSize="@dimen/text_normal" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/flinbox"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/m7"
+                        android:layout_weight="1"
+                        android:background="@drawable/block_bg"
+                        android:onClick="@{ ()-> fragment.indboxMeeting()}"
+                        android:visibility="visible">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/m70"
+                                android:layout_height="@dimen/m60"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="@dimen/m3"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_generic_inbox" />
+
+                            <TextView
+                                android:id="@+id/tvinbox"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/m10"
+                                android:fontFamily="serif"
+                                android:gravity="right"
+                                android:text="@string/your_messages"
+                                android:textColor="@color/text_white"
+                                android:textSize="@dimen/text_normal" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/iv_new_message"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="right"
+                            android:layout_marginRight="@dimen/m25"
+                            android:layout_marginTop="@dimen/m5"
+                            android:src="@drawable/ic_alert" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/flhotdesking"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/m7"
+                        android:layout_weight="1"
+                        android:background="@drawable/block_bg"
+                        android:visibility="gone"
+                        android:onClick="@{ ()-> fragment.hotDesking()}">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/m75"
+                                android:layout_height="@dimen/m75"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_hot_desking_empty" />
+
+                            <TextView
+                                android:id="@+id/tvhotdesking"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:fontFamily="serif"
+                                android:gravity="right"
+                                android:text="@string/hot_desking"
+                                android:textColor="@color/text_light_gray"
+                                android:textSize="@dimen/text_normal" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/flOrderfood"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/m7"
+                        android:layout_weight="1"
+                        android:background="@drawable/block_bg"
+                        android:onClick="@{()-> fragment.orderFood()}">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/m65"
+                                android:layout_height="@dimen/m65"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_generic_food" />
+
+                            <TextView
+                                android:id="@+id/tvorder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/m10"
+                                android:fontFamily="serif"
+                                android:gravity="center"
+                                android:text="@string/order_your_food"
+                                android:textColor="@color/text_white"
+                                android:textSize="@dimen/text_normal" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/flmanagemeeting"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/m7"
+                        android:layout_weight="1"
+                        android:background="@drawable/block_bg"
+                        android:onClick="@{ ()-> fragment.manageMeeting()}">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/m70"
+                                android:layout_height="@dimen/m60"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_connection" />
+
+                            <TextView
+                                android:id="@+id/tvmanage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/m15"
+                                android:fontFamily="serif"
+                                android:gravity="right"
+                                android:text="@string/manage_meetings"
+                                android:textColor="@color/text_white"
+                                android:textSize="@dimen/text_normal" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.7"
+                android:background="@drawable/block_bg"
+                android:layout_margin="@dimen/m7"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/m10"
+                        android:fontFamily="monospace"
+                        android:text="@string/upcoming_meetings"
+                        android:textColor="@color/text_white"
+                        android:textSize="@dimen/text_medium"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/m5"
+                    android:background="@color/line_gray" />
+
+                <android.support.v4.widget.SwipeRefreshLayout
+                    android:id="@+id/pull_to_refresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ListView
+                            android:id="@+id/ll_upcoming_meetings"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal" />
+
+                        <TextView
+                            android:id="@+id/tv_msg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/m10"
+                            android:fontFamily="monospace"
+                            android:text="@string/no_upcoming_meetings"
+                            android:textColor="@color/text_white"
+                            android:textSize="@dimen/text_medium"
+                            android:textStyle="bold"
+                            android:layout_centerInParent="true"
+                            android:visibility="gone"/>
+
+                    </RelativeLayout>
+                </android.support.v4.widget.SwipeRefreshLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</layout>

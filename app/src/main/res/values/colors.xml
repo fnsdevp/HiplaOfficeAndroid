@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#131313</color>
+    <color name="colorPrimaryDark">#101010</color>
+    <color name="colorAccent">#1f8fcf</color>
+    <color name="colorBlue">#1f8fcf</color>
+    <color name="primary_light">#131313</color>
+    <color name="background">#bbbcbaba</color>
+    <color name="grey_bg_for_meeting_manage">#fdfdfd</color>
+    <color name="text_blue">#1f8fcf</color>
+    <color name="blue">#1f8fcf</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_meetingrequest">#1f8fcf</color>
+    <color name="text_black">#737373</color>
+    <color name="text_mange">#1f8fcf</color>
+    <color name="btn_bg">#003854</color>
+    <color name="text_mange_cancel">#20FFFFFF</color>
+    <color name="text_red">#dc122a</color>
+    <color name="text_meetingrequest_hdr">#9ed5f1</color>
+    <color name="white">#FFFFFF</color>
+    <color name="yellow">#f2813f</color>
+    <color name="text_brown">#593505</color>
+    <color name="text_green">#37ad57</color>
+    <color name="text_light_gray">#b1adad</color>
+    <color name="line_gray">#ffffff</color>
+    <color name="text_gray">#313131</color>
+    <color name="color_transparent">#a0101010</color>
+    <color name="colorGreydeep">#504f4f</color>
+    <color name="dialogBgColor">#44101010</color>
+    <color name="bottombar_bg">#fdfdfd</color>
+    <color name="home_page_box_bg">#80111111</color>
+    <color name="navigation_background">#14273D</color>
+    <color name="navigation_button_color">#90aaaaaa</color>
+    <color name="navigation_button_color_dark">#90dddddd</color>
+    <color name="navigation_red">#EC7703</color>
+
+</resources>

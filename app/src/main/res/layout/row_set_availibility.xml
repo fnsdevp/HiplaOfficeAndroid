@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rl_layout"
+    android:background="@android:color/transparent">
+
+    <RelativeLayout
+        android:id="@+id/rl_date"
+        android:layout_width="@dimen/m75"
+        android:layout_height="@dimen/m75"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="@dimen/m10"
+        android:background="@drawable/date_white_border">
+
+        <TextView
+            android:id="@+id/tv_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/m10"
+            android:layout_centerHorizontal="true"
+            android:text="7"
+            android:fontFamily="serif"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_extra_extra_larg"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/m10"
+            android:text="21 Jan 2018"
+            android:fontFamily="serif"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_small" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/m5"
+        android:layout_marginRight="@dimen/m5"
+        android:layout_toLeftOf="@+id/sw_switch"
+        android:layout_toRightOf="@+id/rl_date">
+
+        <LinearLayout
+            android:id="@+id/ll_from_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginRight="@dimen/m7">
+
+            <TextView
+                android:id="@+id/tv_from_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_larg"
+                android:layout_gravity="center"
+                android:text=""
+                android:fontFamily="sans-serif"
+                android:layout_marginBottom="@dimen/m10"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_to_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginRight="@dimen/m7">
+
+            <TextView
+                android:id="@+id/tv_to_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_larg"
+                android:layout_gravity="center"
+                android:text=""
+                android:fontFamily="sans-serif"
+                android:layout_marginBottom="@dimen/m10"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/sw_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/m10"
+        android:focusable="false"
+        android:buttonTint="@color/text_white"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/text_gray"
+        android:layout_below="@+id/rl_date"
+        android:layout_marginLeft="@dimen/m15"
+        android:visibility="gone"/>
+</RelativeLayout>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/navigation_background">
+
+    <RelativeLayout
+        android:id="@+id/rl_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/blue"
+        android:elevation="@dimen/m5"
+        android:layout_alignParentTop="true">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorGreydeep" />
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="@dimen/m30"
+            android:layout_height="@dimen/m30"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_back" />
+
+        <ImageView
+            android:id="@+id/img_choose_path"
+            android:layout_width="@dimen/m30"
+            android:layout_height="@dimen/m30"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_settings"
+            android:layout_alignParentRight="true"/>
+
+        <ImageView
+            android:id="@+id/ivappicon"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginLeft="@dimen/m5"
+            android:src="@drawable/toolbar_logo"
+            android:layout_centerInParent="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorGreydeep" />
+    </RelativeLayout>
+
+    <!-- Main layout -->
+    <FrameLayout android:id="@+id/navigation__main_layout"
+                 android:layout_width="fill_parent"
+                 android:layout_height="fill_parent"
+        android:layout_below="@+id/rl_toolbar">
+
+        <com.navigine.naviginesdk.LocationView android:id="@+id/navigation__location_view"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"/>
+        
+        <TextView android:id="@+id/navigation__info_label"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="bottom|center"
+                  android:layout_marginBottom="@dimen/m10"
+                  android:background="@color/navigation_red"
+                  android:textSize="@dimen/_13ssp"
+                  android:textColor="@color/text_black"/>
+
+        <!-- Previous floor button -->
+        <LinearLayout android:id="@+id/navigation__back_view"
+                     android:orientation="horizontal"
+                     android:layout_width="fill_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="top|left"
+                     android:layout_marginTop="0dp"
+                     android:layout_marginLeft="0dp"
+                     android:paddingTop="35dp"
+                     android:paddingLeft="10dp"
+                     android:paddingRight="10dp"
+                     android:paddingBottom="10dp"
+                     android:background="#90aaaaaa"
+            android:visibility="gone">
+
+            <Button android:id="@+id/navigation__back_button"
+                    android:layout_width="@dimen/m30"
+                    android:layout_height="@dimen/m30"
+                    android:layout_gravity="center"
+                    android:background="@drawable/btn_back"/>
+            
+            <TextView
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:layout_gravity="center"
+                  android:gravity="center"
+                  android:textSize="@dimen/_17ssp"
+                  android:textColor="#556475"
+                  android:text="Tap here to cancel route"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="top|right"
+            android:layout_marginTop="@dimen/m80"
+            android:layout_marginBottom="@dimen/m15"
+            android:layout_marginRight="@dimen/m15">
+
+            <!-- Previous floor button -->
+            <FrameLayout android:id="@+id/navigation__prev_floor_view"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:background="@color/navigation_button_color">
+
+                <Button android:id="@+id/navigation__prev_floor_button"
+                        android:layout_width="@dimen/m50"
+                        android:layout_height="@dimen/m50"
+                        android:background="@drawable/btn_prev_floor"/>
+            </FrameLayout>
+
+            <!-- Current floor label -->
+            <TextView android:id="@+id/navigation__current_floor_label"
+                      android:layout_width="@dimen/m50"
+                      android:layout_height="@dimen/m50"
+                      android:gravity="center"
+                      android:textSize="@dimen/_16ssp"
+                      android:textColor="@color/text_black"
+                      android:background="@color/navigation_button_color_dark"/>
+
+            <!-- Next floor button -->
+            <FrameLayout android:id="@+id/navigation__next_floor_view"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:background="@color/navigation_button_color">
+
+                <Button android:id="@+id/navigation__next_floor_button"
+                        android:layout_width="@dimen/m50"
+                        android:layout_height="@dimen/m50"
+                        android:background="@drawable/btn_next_floor"/>
+            </FrameLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <!-- Zoom in button -->
+            <FrameLayout android:id="@+id/navigation__zoom_in_view"
+                         android:layout_width="@dimen/m50"
+                         android:layout_height="@dimen/m50"
+                         android:background="@drawable/zoom_button_circular">
+                <!--android:background="#90aaaaaa">-->
+
+                <Button android:id="@+id/navigation__zoom_in_button"
+                        android:layout_width="@dimen/m50"
+                        android:layout_height="@dimen/m50"
+                        android:background="@drawable/btn_zoom_in"/>
+            </FrameLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="@dimen/m10"/>
+
+            <!-- Zoom out button -->
+            <FrameLayout android:id="@+id/navigation__zoom_out_view"
+                         android:layout_width="@dimen/m50"
+                         android:layout_height="@dimen/m50"
+                         android:background="@drawable/zoom_button_circular">
+
+                <Button android:id="@+id/navigation__zoom_out_button"
+                        android:layout_width="@dimen/m50"
+                        android:layout_height="@dimen/m50"
+                        android:background="@drawable/btn_zoom_out"/>
+            </FrameLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="@dimen/m75"/>
+
+            <FrameLayout android:id="@+id/navigation__adjust_mode_view"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:background="@drawable/zoom_button_circular">
+
+                <Button android:id="@+id/navigation__adjust_mode_button"
+                        android:layout_width="@dimen/m50"
+                        android:layout_height="@dimen/m50"
+                        android:background="@drawable/btn_adjust_mode_off"/>
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <TextView android:id="@+id/navigation__error_message_label"
+                  android:layout_width="fill_parent"
+                  android:layout_height="@dimen/m70"
+                  android:layout_gravity="bottom|left"
+                  android:paddingLeft="@dimen/m5"
+                  android:paddingRight="@dimen/m5"
+                  android:gravity="center"
+                  android:background="@color/navigation_red"
+                  android:textSize="@dimen/_13ssp"
+                  android:textColor="@color/text_white"/>
+
+    </FrameLayout> <!-- Main layout -->
+
+    <LinearLayout
+        android:id="@+id/ll_drop_down"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/rl_toolbar"
+        android:background="@color/text_white"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_location1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_normal"
+            android:textColor="@color/text_black"
+            android:background="@color/text_white"
+            android:text="Confirance Room"
+            android:layout_margin="@dimen/m5"/>
+
+        <TextView
+            android:id="@+id/tv_location2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_normal"
+            android:background="@color/text_white"
+            android:textColor="@color/text_black"
+            android:text="Small Confirance Room"
+            android:layout_margin="@dimen/m5"/>
+
+        <TextView
+            android:id="@+id/tv_location3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_normal"
+            android:background="@color/text_white"
+            android:textColor="@color/text_black"
+            android:text="Directors Room"
+            android:layout_margin="@dimen/m5"/>
+
+        <TextView
+            android:id="@+id/tv_location4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_normal"
+            android:background="@color/text_white"
+            android:textColor="@color/text_black"
+            android:text="Managment Room"
+            android:layout_margin="@dimen/m5"/>
+
+        <TextView
+            android:id="@+id/tv_location5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_normal"
+            android:background="@color/text_white"
+            android:textColor="@color/text_black"
+            android:text="Men's Washroom"
+            android:layout_margin="@dimen/m5"/>
+
+        <TextView
+            android:id="@+id/tv_location6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_normal"
+            android:background="@color/text_white"
+            android:textColor="@color/text_black"
+            android:text="Women's Washroom"
+            android:layout_margin="@dimen/m5"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

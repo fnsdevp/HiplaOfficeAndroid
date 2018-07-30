@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.hipla.smartoffice_new.fragment.OrderFoodFragment" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/bg_pantry"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_background">
+
+            <LinearLayout
+                android:id="@+id/llIndbox"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_indbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_marginLeft="@dimen/m10"
+                    android:layout_marginRight="@dimen/m10"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center"
+                    android:text="@string/choose_your_category"
+                    android:textColor="@color/text_blue"
+                    android:textSize="@dimen/text_medium"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/text_blue"
+                    android:layout_gravity="bottom"
+                    android:visibility="visible"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ExpandableListView
+            android:id="@+id/lvExp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btn_confirm_order"
+            android:layout_below="@+id/rl_top"
+            android:layout_marginBottom="@dimen/m5"/>
+
+        <TextView
+            android:id="@+id/btn_confirm_order"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/m35"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/roundedcorner_background_bg_blue"
+            android:fontFamily="serif"
+            android:paddingLeft="@dimen/m10"
+            android:paddingRight="@dimen/m10"
+            android:layout_marginBottom="@dimen/m5"
+            android:text="@string/order"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/_13ssp" />
+
+    </RelativeLayout>
+
+</layout>

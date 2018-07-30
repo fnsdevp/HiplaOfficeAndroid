@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.hipla.smartoffice_new.fragment.SelectContactFragment" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/activity_show_contact"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/showContact_rlSearchViewToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:padding="@dimen/m10">
+
+            <android.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/m40"
+                android:background="@drawable/rounded_border_searchview"
+                android:closeIcon="@drawable/ic_close_gray"
+                android:searchHintIcon="@drawable/ic_search"
+                android:queryHint="@string/example_name"
+                android:searchIcon="@drawable/ic_search"
+                android:inputType="textCapSentences"/>
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/contacts_list"
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:layout_height="match_parent"
+            android:divider="@color/text_light_gray"
+            android:layout_below="@+id/showContact_rlSearchViewToolbar" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/contactinfo_ll_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/m5"
+        android:background="@drawable/roundedcorner_background_bg"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:id="@+id/ll_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/m5">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="@dimen/m60"
+                android:layout_height="@dimen/m60"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:background="@drawable/circle_blue"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/m5"
+            android:layout_toRightOf="@+id/ll_name"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/rl_date">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/m10"
+                android:ellipsize="end"
+                android:fontFamily="serif"
+                android:singleLine="true"
+                android:text="User name"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/m10"
+                android:layout_marginTop="@dimen/m5"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"
+                android:singleLine="true"
+                android:text="User name"
+                android:textColor="@color/text_light_gray"
+                android:textSize="@dimen/_11ssp"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_date"
+            android:layout_width="@dimen/m60"
+            android:layout_height="@dimen/m60"
+            android:layout_marginLeft="@dimen/m7"
+            android:layout_marginRight="@dimen/m7"
+            android:layout_marginTop="@dimen/m15"
+            android:layout_marginBottom="@dimen/m15"
+            android:background="@drawable/roundedcorner_background_bg_blue"
+            android:layout_alignParentRight="true">
+
+            <TextView
+                android:id="@+id/tv_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tv_date"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/m5"
+                android:text="7"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/m10"
+                android:text="Jan 2018"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/_8ssp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginLeft="@dimen/m20"/>
+
+</LinearLayout>

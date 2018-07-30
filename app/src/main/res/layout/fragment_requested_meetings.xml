@@ -1,0 +1,110 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.hipla.smartoffice_new.fragment.RequestedMeetingsFragment" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.hipla.smartoffice_new.fragment.RequestedMeetingsFragment">
+
+        <LinearLayout
+            android:id="@+id/ll_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/m7"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/m7"
+                android:text="@string/all"
+                android:textAllCaps="true"
+                android:textColor="@color/text_blue"
+                android:textSize="@dimen/text_larg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/m7"
+                android:text="@string/slash"
+                android:textAllCaps="true"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_larg" />
+
+            <TextView
+                android:id="@+id/tv_pending"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/m7"
+                android:text="@string/pending"
+                android:textAllCaps="true"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_larg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/m7"
+                android:text="@string/slash"
+                android:textAllCaps="true"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_larg" />
+
+            <TextView
+                android:id="@+id/tv_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/m7"
+                android:text="@string/confirm"
+                android:textAllCaps="true"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_larg" />
+        </LinearLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/pull_to_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_filter"
+            android:background="@android:color/transparent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_meetings"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent" />
+
+                <TextView
+                    android:id="@+id/tv_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/m10"
+                    android:fontFamily="monospace"
+                    android:text="@string/no_upcoming_meetings"
+                    android:textColor="@color/text_white"
+                    android:textSize="@dimen/text_medium"
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </RelativeLayout>
+
+</layout>

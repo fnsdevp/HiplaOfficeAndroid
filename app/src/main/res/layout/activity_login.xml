@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.hipla.smartoffice_new.activity.LoginActivity" />
+
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_home">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_background">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/m5">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/m40"
+                    android:layout_marginBottom="@dimen/m40">
+
+                    <ImageView
+                        android:id="@+id/imgViegHeader"
+                        android:layout_width="@dimen/_110sdp"
+                        android:layout_height="@dimen/_110sdp"
+                        android:src="@drawable/app_logo"
+                        android:scaleType="fitXY"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/input_layout_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:paddingLeft="@dimen/m15"
+                        android:paddingRight="@dimen/m15"
+                        android:theme="@style/TextLabel">
+
+                        <EditText
+                            android:id="@+id/input_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:fontFamily="serif"
+                            android:textColor="@color/text_white"
+                            android:textColorHint="@color/text_white"
+                            android:maxLines="1"
+                            android:backgroundTint="@color/line_gray"
+                            android:hint="@string/username" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/input_layout_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:paddingLeft="@dimen/m15"
+                        android:paddingRight="@dimen/m15"
+                        android:theme="@style/TextLabel">
+
+                        <EditText
+                            android:id="@+id/input_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_white"
+                            android:textColorHint="@color/text_white"
+                            android:maxLines="1"
+                            android:backgroundTint="@color/line_gray"
+                            android:inputType="textPassword"
+                            android:fontFamily="serif"
+                            android:hint="@string/password" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/forgotpassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/m15"
+                        android:layout_marginBottom="@dimen/m25"
+                        android:text="@string/forget_password"
+                        android:textColor="@color/text_blue"
+                        android:textSize="@dimen/text_larg"
+                        android:fontFamily="serif"
+                        android:layout_gravity="center_horizontal"
+                        android:onClick="@{ ()-> activity.forgetPassword()}"/>
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/m5"
+                        android:layout_gravity="center_horizontal">
+
+                        <CheckBox
+                            android:id="@+id/checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:buttonTint="@color/text_white"/>
+                        <TextView
+                            android:id="@+id/tv_cb_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/login_as_employee"
+                            android:textSize="@dimen/text_larg"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="serif"
+                            android:layout_toRightOf="@+id/checkbox"
+                            android:textColor="@color/text_white"/>
+
+                        <Button
+                            android:id="@+id/signupB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sign_up"
+                            android:textColor="@color/text_blue"
+                            android:textSize="@dimen/text_extra_larg"
+                            android:textAllCaps="false"
+                            android:layout_marginLeft="@dimen/m10"
+                            android:layout_toRightOf="@+id/tv_cb_text"
+                            android:fontFamily="monospace"
+                            android:background="@android:color/transparent"
+                            android:onClick="@{()-> activity.signUp()}"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="@dimen/_180sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/m5"
+                    android:paddingRight="@dimen/m5"
+                    android:layout_marginTop="@dimen/m10">
+
+                    <Button
+                        android:id="@+id/loginB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/login"
+                        android:textColor="@color/text_white"
+                        android:textSize="@dimen/text_larg"
+                        android:fontFamily="serif"
+                        android:background="@drawable/rounded_corner_blue"
+                        android:onClick="@{()-> activity.doLogin()}"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>

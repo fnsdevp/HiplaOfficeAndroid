@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/normal_card_rounded">
+
+    <TextView
+        android:id="@+id/tv_time_slot"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m45"
+        android:textSize="@dimen/text_normal"
+        android:textColor="@color/text_black"
+        android:gravity="center"
+        android:text="9 P.M - 10 P.M"/>
+
+</LinearLayout>

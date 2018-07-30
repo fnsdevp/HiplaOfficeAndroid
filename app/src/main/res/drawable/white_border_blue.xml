@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle" android:padding="10dp">
+    <solid android:color="@color/blue"/> <!-- this one is ths color of the Rounded Button -->
+    <stroke android:width="@dimen/m2" android:color="@color/line_gray"/>
+    <corners android:radius="@dimen/m5"/>
+</shape>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_120sdp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/popup_bg"
+    android:layout_margin="@dimen/m5">
+
+    <TextView
+        android:id="@+id/tv_all"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="wrap_content"
+        android:text="@string/all"
+        android:textColor="@color/text_white"
+        android:gravity="center"
+        android:textSize="@dimen/text_larg"/>
+
+    <View
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="1px"
+        android:background="@color/line_gray"/>
+
+    <TextView
+        android:id="@+id/tv_read"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="wrap_content"
+        android:text="@string/read"
+        android:textColor="@color/text_white"
+        android:gravity="center"
+        android:textSize="@dimen/text_larg"
+        android:layout_marginTop="@dimen/m5"/>
+
+    <View
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="1px"
+        android:background="@color/line_gray"/>
+
+    <TextView
+        android:id="@+id/tv_unread"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="wrap_content"
+        android:text="@string/unread"
+        android:textColor="@color/text_white"
+        android:gravity="center"
+        android:textSize="@dimen/text_larg"
+        android:layout_marginTop="@dimen/m5"/>
+
+</LinearLayout>

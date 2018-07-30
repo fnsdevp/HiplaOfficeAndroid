@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/m30"
+        android:background="@drawable/dialog_background"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/m55"
+            android:background="@drawable/date_selected">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/meeting_request_sent"
+                android:fontFamily="serif"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_larg" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="@dimen/m90"
+            android:layout_height="@dimen/m90"
+            android:scaleType="fitXY"
+            android:src="@drawable/app_logo"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/m10"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_black"
+            android:text="@string/meeting_on"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/m7"
+            android:fontFamily="serif"
+            android:textSize="@dimen/text_normal"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorBlue"/>
+
+        <LinearLayout
+            android:layout_width="@dimen/adapter_item_width"
+            android:layout_height="@dimen/adapter_item_height"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/date_selected"
+            android:layout_margin="@dimen/m5"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/tv_date_week"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="MON"
+                android:textAllCaps="true"
+                android:textColor="@color/text_white"
+                android:fontFamily="serif"
+                android:textSize="@dimen/text_small" />
+
+            <TextView
+                android:id="@+id/tv_date_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="2"
+                android:textAllCaps="true"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_extra_extra_larg"
+                android:fontFamily="serif"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_date_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="Feb"
+                android:textAllCaps="true"
+                android:textColor="@color/text_white"
+                android:fontFamily="serif"
+                android:textSize="@dimen/text_small" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorBlue"/>
+
+        <TextView
+            android:id="@+id/tv_meeting_with"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_black"
+            android:text="@string/meeting_with"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/m7"
+            android:fontFamily="serif"
+            android:textSize="@dimen/text_normal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_red"
+            android:text="@string/once_meeting_confirmed"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/m10"
+            android:textSize="@dimen/text_normal"
+            android:fontFamily="serif"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/btn_ok"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/btn_ok"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/m15"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

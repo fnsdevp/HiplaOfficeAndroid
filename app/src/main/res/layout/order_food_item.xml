@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/m70"
+    android:layout_gravity="center_vertical"
+    android:background="@drawable/rounded_background"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:weightSum="100">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="15"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/food_menu_img"
+            android:layout_width="@dimen/m30"
+            android:layout_height="@dimen/m30"
+            android:layout_marginLeft="@dimen/m10"
+            android:layout_marginRight="@dimen/m10"
+            android:background="@color/colorBlue"
+            android:padding="1dp"
+            android:src="@drawable/ic_generic_food" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lblListItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/m3"
+        android:layout_marginRight="@dimen/m10"
+        android:layout_weight="55"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-condensed"
+        android:paddingBottom="@dimen/m15"
+        android:paddingTop="@dimen/m15"
+        android:singleLine="true"
+        android:text="Black Coffee"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/_13ssp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/ll_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="30"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_min_cart"
+            android:layout_width="@dimen/m20"
+            android:layout_height="@dimen/m20"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_minu_red" />
+
+        <TextView
+            android:id="@+id/tv_quantity_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/m3"
+            android:layout_marginRight="@dimen/m3"
+            android:ems="2"
+            android:gravity="center"
+            android:text="0"
+            android:fontFamily="serif"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_larg" />
+
+        <ImageView
+            android:id="@+id/iv_add_cart"
+            android:layout_width="@dimen/m20"
+            android:layout_height="@dimen/m20"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_add_red" />
+    </LinearLayout>
+
+</LinearLayout>

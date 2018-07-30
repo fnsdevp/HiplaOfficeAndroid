@@ -1,0 +1,74 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.hipla.smartoffice_new.fragment.NotificationFragment" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_notification"
+        tools:context="com.hipla.smartoffice_new.fragment.NotificationFragment">
+
+        <RelativeLayout
+            android:id="@+id/rl_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/llIndbox"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_indbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_28sdp"
+                    android:gravity="center"
+                    android:text="@string/all_notification"
+                    android:textColor="@color/text_blue"
+                    android:textSize="@dimen/text_medium"
+                    android:layout_marginLeft="@dimen/m10"
+                    android:layout_marginRight="@dimen/m10"/>
+
+                <View
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/text_blue"
+                    android:layout_gravity="bottom"
+                    android:visibility="visible"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_28sdp"
+                android:gravity="center"
+                android:text="@string/clear"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_medium"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/m10"
+                android:layout_marginRight="@dimen/m10"/>
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_notifications"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rl_top"
+            android:layout_marginTop="@dimen/m5"/>
+
+    </RelativeLayout>
+
+</layout>

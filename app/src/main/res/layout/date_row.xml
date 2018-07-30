@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_item"
+    android:layout_width="@dimen/adapter_item_width"
+    android:layout_height="@dimen/adapter_item_height"
+    android:layout_marginRight="1dp"
+    android:background="@drawable/normal_card"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="@dimen/adapter_item_width"
+        android:layout_height="@dimen/adapter_item_height"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_date_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="MON"
+            android:textAllCaps="true"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_small" />
+
+        <TextView
+            android:id="@+id/tv_date_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="2"
+            android:textAllCaps="true"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_extra_extra_larg"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_date_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="Feb"
+            android:textAllCaps="true"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_small" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="3px"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:background="@color/text_white"
+        android:layout_marginBottom="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_1sdp"/>
+
+</RelativeLayout>

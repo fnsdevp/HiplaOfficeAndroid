@@ -1,0 +1,403 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.hipla.smartoffice_new.activity.SignUpActivity" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_home">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rounded_background"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/m5">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/m10"
+                            android:layout_marginTop="@dimen/m10">
+
+                            <ImageView
+                                android:id="@+id/imgViegHeader"
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_100sdp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/app_logo" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/txtalredyaccopunt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="serif"
+                                    android:text="@string/already_an_account"
+                                    android:textColor="@color/text_white"
+                                    android:textSize="@dimen/text_medium" />
+
+                                <TextView
+                                    android:id="@+id/txtSignuplogin"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/m10"
+                                    android:fontFamily="monospace"
+                                    android:onClick="@{()-> activity.goToLogin()}"
+                                    android:text="@string/login"
+                                    android:textColor="@color/text_blue"
+                                    android:textSize="@dimen/text_larg" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="serif"
+                                android:gravity="center"
+                                android:text="@string/or"
+                                android:textColor="@color/text_white" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="serif"
+                                android:gravity="center"
+                                android:text="@string/create_account"
+                                android:textColor="@color/text_white"
+                                android:textSize="@dimen/text_medium" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/m10"
+                            android:layout_marginLeft="@dimen/m80"
+                            android:layout_marginRight="@dimen/m75"
+                            android:layout_marginTop="@dimen/m10"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/llGuest"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/m35"
+                                android:layout_weight="1"
+                                android:background="@drawable/rounded_corner_blue_left"
+                                android:gravity="center"
+                                android:onClick="@{()->activity.selectGuest()}">
+
+                                <TextView
+                                    android:id="@+id/tvGuest"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="serif"
+                                    android:gravity="center"
+                                    android:text="@string/guest"
+                                    android:textColor="@color/text_white" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/llEmployee"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/m35"
+                                android:layout_weight="1"
+                                android:background="@drawable/rounded_corner_dark_employee"
+                                android:gravity="center"
+                                android:onClick="@{()->activity.selectEmployee()}">
+
+                                <TextView
+                                    android:id="@+id/tvEmployee"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="serif"
+                                    android:gravity="center"
+                                    android:text="@string/employee"
+                                    android:textColor="@color/text_white" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingLeft="@dimen/m20"
+                            android:paddingRight="@dimen/m20">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/input_layout_username"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="serif"
+                                android:theme="@style/TextLabel">
+
+                                <EditText
+                                    android:id="@+id/et_username"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="@color/line_gray"
+                                    android:fontFamily="serif"
+                                    android:hint="@string/username"
+                                    android:importantForAutofill="noExcludeDescendants"
+                                    android:inputType="text"
+                                    android:maxLines="1"
+                                    android:textColor="@color/text_white"
+                                    android:textColorHint="@color/text_white" />
+                            </android.support.design.widget.TextInputLayout>
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/input_layout_password"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="serif"
+                                android:theme="@style/TextLabel">
+
+                                <EditText
+                                    android:id="@+id/et_password"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="@color/line_gray"
+                                    android:fontFamily="serif"
+                                    android:hint="@string/password"
+                                    android:importantForAutofill="noExcludeDescendants"
+                                    android:inputType="textPassword"
+                                    android:maxLines="1"
+                                    android:textColor="@color/text_white"
+                                    android:textColorHint="@color/text_white" />
+                            </android.support.design.widget.TextInputLayout>
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/input_layout_firstname"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="serif"
+                                android:theme="@style/TextLabel">
+
+                                <EditText
+                                    android:id="@+id/et_firstname"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="@color/line_gray"
+                                    android:fontFamily="serif"
+                                    android:hint="@string/fname"
+                                    android:importantForAutofill="noExcludeDescendants"
+                                    android:inputType="textCapSentences"
+                                    android:maxLines="1"
+                                    android:textColor="@color/text_white"
+                                    android:textColorHint="@color/text_white" />
+                            </android.support.design.widget.TextInputLayout>
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/input_layout_lastname"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="serif"
+                                android:theme="@style/TextLabel">
+
+                                <EditText
+                                    android:id="@+id/et_lastname"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="@color/line_gray"
+                                    android:fontFamily="serif"
+                                    android:hint="@string/lname"
+                                    android:importantForAutofill="noExcludeDescendants"
+                                    android:inputType="textCapSentences"
+                                    android:maxLines="1"
+                                    android:textColor="@color/text_white"
+                                    android:textColorHint="@color/text_white" />
+                            </android.support.design.widget.TextInputLayout>
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/input_layout_emailt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="serif"
+                                android:theme="@style/TextLabel">
+
+                                <EditText
+                                    android:id="@+id/et_emailt"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="@color/line_gray"
+                                    android:fontFamily="serif"
+                                    android:hint="@string/email"
+                                    android:importantForAutofill="noExcludeDescendants"
+                                    android:inputType="textEmailAddress"
+                                    android:maxLines="1"
+                                    android:textColor="@color/text_white"
+                                    android:textColorHint="@color/text_white" />
+                            </android.support.design.widget.TextInputLayout>
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/input_layout_phone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="serif"
+                                android:theme="@style/TextLabel">
+
+                                <EditText
+                                    android:id="@+id/et_phone"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="@color/line_gray"
+                                    android:fontFamily="serif"
+                                    android:hint="@string/phone"
+                                    android:importantForAutofill="noExcludeDescendants"
+                                    android:inputType="phone"
+                                    android:maxLines="1"
+                                    android:textColor="@color/text_white"
+                                    android:textColorHint="@color/text_white" />
+                            </android.support.design.widget.TextInputLayout>
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/input_layout_designation"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="serif"
+                                android:theme="@style/TextLabel">
+
+                                <EditText
+                                    android:id="@+id/et_designamtion"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="@color/line_gray"
+                                    android:fontFamily="serif"
+                                    android:hint="@string/designation"
+                                    android:importantForAutofill="noExcludeDescendants"
+                                    android:inputType="textCapSentences"
+                                    android:maxLines="1"
+                                    android:textColor="@color/text_white"
+                                    android:textColorHint="@color/text_white" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/input_layout_department"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="serif"
+                                android:theme="@style/TextLabel"
+                                android:visibility="gone">
+
+                                <EditText
+                                    android:id="@+id/et_department"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="@color/line_gray"
+                                    android:fontFamily="serif"
+                                    android:hint="@string/department"
+                                    android:importantForAutofill="noExcludeDescendants"
+                                    android:inputType="textCapSentences"
+                                    android:maxLines="1"
+                                    android:textColor="@color/text_white"
+                                    android:textColorHint="@color/text_white" />
+                            </android.support.design.widget.TextInputLayout>
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/input_layout_company"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="serif"
+                                android:theme="@style/TextLabel"
+                                android:visibility="visible">
+
+                                <EditText
+                                    android:id="@+id/et_company"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="@color/line_gray"
+                                    android:fontFamily="serif"
+                                    android:hint="@string/company"
+                                    android:importantForAutofill="noExcludeDescendants"
+                                    android:inputType="textCapSentences"
+                                    android:maxLines="1"
+                                    android:textColor="@color/text_white"
+                                    android:textColorHint="@color/text_white" />
+                            </android.support.design.widget.TextInputLayout>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/m20"
+                            android:paddingLeft="@dimen/m20"
+                            android:paddingRight="@dimen/m20"
+                            android:paddingTop="@dimen/m20">
+
+                            <Button
+                                android:id="@+id/signupB"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:background="@drawable/rounded_corner_blue"
+                                android:fontFamily="serif"
+                                android:onClick="@{ ()-> activity.doSignUp()}"
+                                android:text="@string/sign_up"
+                                android:textColor="@color/text_white"
+                                android:textSize="@dimen/text_larg" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.design.widget.CoordinatorLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</layout>
